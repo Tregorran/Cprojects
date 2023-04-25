@@ -1,0 +1,67 @@
+ls - show files
+cd - navigate to files
+cd .. - go back one directory
+
+Compile and run c code
+-----------------------------
+gcc -o tests tests.c - compile and name files
+gcc -o tests tests.c -pthread - compile parallel programs
+./tests - run c code
+
+login Balena
+------------------
+login into linux.bath.ac.uk in kitty
+enter - ssh balena.hpc.bath.ac.uk
+enter - your password
+
+modules
+-------------
+module avail - list of available modules
+module load - load a module
+module list - lists the currently loaded modules
+module unload - unload a module
+module purge to unload all modules
+
+I will need: 
+module load gcc - loads the c compiler
+module load slurm
+
+SLUM options:
+#SBATCH --time=hh:mm:ss - limit the amount of time the program can take
+
+maximum of 4 nodes
+16 nodes?
+For a shared memory program on one node, use
+--nodes=1
+
+copying programs and removing
+-----------------------
+cd $BUCSHOME/year3/cm30225/coursework1/parallel.c
+cd $scratch/scratch
+cp $BUCSHOME/year3/cm30225/coursework1/parallel.c .
+rm filename
+
+cd $BUCSHOME - navigate to your files, getting stuff off the cluster
+$Home - for things you need to keep
+$scratch - where you should be putting your files
+
+submitting a job:
+-------------------
+dos2unix myBatchFile - remove line breaks
+sbatch jobfile - submits job
+squeue -u username - check progress of username
+squeue - to check progress of a job
+scancel jobif - to kill the job 
+
+reading job:
+----------------
+more slurm-....out
+
+
+code
+Barriers - no thread can proceed until all other threads reach this barrier
+createThread - pthread_create
+
+
+
+
